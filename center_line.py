@@ -5,6 +5,7 @@ class CenterLine(Turtle):
     def __init__(self):
         super().__init__()
         self.hideturtle()
+        self.shape("square")
         self.width(5)
         self.draw_line()
 

@@ -2,17 +2,19 @@ from turtle import Turtle
 
 
 class Paddle(Turtle):
-    def __init__(self, x_value):
+    def __init__(self, location):
         super().__init__()
         self.shape("square")
         self.color("white")
         self.setheading(90)
         self.penup()
-        self.shapesize(1.0, 4.0, 1)
-        self.goto(x_value, 0)
+        self.shapesize(1.0, 5.0, 1)
+        self.goto(location)
 
     def move_up(self):
-        self.forward(20)
+        if self.ycor() < 250:
+            self.forward(20)
 
     def move_down(self):
-        self.backward(20)
+        if self.ycor() > -250:
+            self.backward(20)
